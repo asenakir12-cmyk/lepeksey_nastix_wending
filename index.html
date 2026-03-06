@@ -17,15 +17,24 @@
 }
 body { font-family: 'Montserrat', sans-serif; margin:0; padding:0; overflow-x:hidden; background:#fdfcfb; color:#2d3436; }
 h1,h2,h3,.font-serif { font-family: 'Playfair Display', serif; }
+
+/* Hero */
 .hero-bg { background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('photo.jpg'); background-size:cover; background-position:center; background-attachment:fixed; }
+
+/* Animations */
 .fade-up-in { opacity:0; transform:translateY(30px); animation: fadeUp 1.5s cubic-bezier(0.2,0.8,0.2,1) forwards; }
 .delay-1 { animation-delay: 0.3s; }
 .delay-2 { animation-delay: 0.6s; }
 .delay-3 { animation-delay: 0.9s; }
 @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
+
+/* Glass cards */
 .glass-card { background: rgba(255,255,255,0.7); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border:1px solid var(--glass-border); border-radius:32px; box-shadow:0 10px 40px rgba(0,0,0,0.03); }
+
+/* Countdown */
 .countdown-number { font-size:clamp(2rem,8vw,3.5rem); font-weight:200; line-height:1; color:var(--dark); }
 .countdown-label { font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:#888; margin-top:0.5rem; }
+
 .container-custom { max-width:1200px; margin:0 auto; padding-left:1.5rem; padding-right:1.5rem; }
 .animate-on-scroll { opacity:0; transform:translateY(40px); transition: all 1s ease-out; }
 .animate-on-scroll.visible { opacity:1; transform:translateY(0); }
@@ -34,6 +43,11 @@ h1,h2,h3,.font-serif { font-family: 'Playfair Display', serif; }
 .btn-gold:hover { background:var(--accent); transform:translateY(-3px); box-shadow:0 10px 20px rgba(212,175,55,0.2); }
 .rsvp-input { background:transparent; border:none; border-bottom:1px solid #ccc; padding:12px 0; width:100%; transition:border-color 0.4s; border-radius:0; }
 .rsvp-input:focus { outline:none; border-bottom-color:var(--accent); }
+
+/* Rings Animation */
+.rings-container { position: relative; height: 450px; overflow: hidden; border-radius: 40px; cursor: pointer; }
+.rings-img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(1.1); transition: all 1.2s cubic-bezier(0.4,0,0.2,1); transform: scale(1.05); }
+.rings-container:hover .rings-img { filter: grayscale(0%) contrast(1); transform: scale(1); }
 </style>
 </head>
 <body>
@@ -52,10 +66,21 @@ h1,h2,h3,.font-serif { font-family: 'Playfair Display', serif; }
   </div>
 </section>
 
-<!-- Story -->
+<!-- Story с Interactive Ring -->
 <section class="py-24 bg-[#fdfcfb]">
   <div class="container-custom">
     <div class="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+
+      <!-- Картинка с кольцом -->
+      <div class="rings-container animate-on-scroll">
+        <img src="https://avatars.mds.yandex.net/i?id=95dabe62d0cda9b28d51e7929850a8bd_l-5347442-images-thumbs&n=13"
+             alt="Кольца" class="rings-img">
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-700 bg-black/20">
+          <span class="text-white font-serif italic text-2xl tracking-[0.3em]">Навсегда</span>
+        </div>
+      </div>
+
+      <!-- Текст истории -->
       <div class="animate-on-scroll" style="transition-delay: 200ms;">
         <h2 class="text-4xl md:text-6xl font-serif italic mb-6">Навстречу счастью</h2>
         <p class="text-gray-500 leading-relaxed text-lg mb-8 font-light">
@@ -64,6 +89,7 @@ h1,h2,h3,.font-serif { font-family: 'Playfair Display', serif; }
         <div class="h-[1px] w-20 bg-[#d4af37] mb-8"></div>
         <p class="italic text-gray-400">С любовью, Алексей и Анастасия</p>
       </div>
+
     </div>
   </div>
 </section>
@@ -101,12 +127,7 @@ h1,h2,h3,.font-serif { font-family: 'Playfair Display', serif; }
       <p class="text-center text-gray-400 mb-12 font-light">Просим вас дать ответ до 1 сентября 2026 года</p>
 
       <form id="weddingForm" class="space-y-12">
-        <!-- Вопрос 1 -->
-        <div>
-          <input type="text" name="name" required class="rsvp-input" placeholder="Ваше имя и фамилия">
-        </div>
-
-        <!-- Вопрос 2 -->
+        <div><input type="text" name="name" required class="rsvp-input" placeholder="Ваше имя и фамилия"></div>
         <div>
           <label class="block mb-2 font-semibold text-gray-400 text-[10px] uppercase tracking-[0.2em]">Сможете ли Вы посетить наше мероприятие?</label>
           <select name="attending" class="rsvp-input">
@@ -115,8 +136,6 @@ h1,h2,h3,.font-serif { font-family: 'Playfair Display', serif; }
             <option value="Пока не могу сказать">Пока не могу сказать</option>
           </select>
         </div>
-
-        <!-- Вопрос 3 -->
         <div>
           <label class="block mb-2 font-semibold text-gray-400 text-[10px] uppercase tracking-[0.2em]">Предпочтительный алкогольный напиток</label>
           <select name="drink" class="rsvp-input">
@@ -135,8 +154,6 @@ h1,h2,h3,.font-serif { font-family: 'Playfair Display', serif; }
             <option>Ром</option>
           </select>
         </div>
-
-        <!-- Вопрос 4 -->
         <div>
           <label class="block mb-2 font-semibold text-gray-400 text-[10px] uppercase tracking-[0.2em]">Сможете ли Вы остаться на второй день?</label>
           <select name="second_day" class="rsvp-input">
@@ -144,8 +161,6 @@ h1,h2,h3,.font-serif { font-family: 'Playfair Display', serif; }
             <option>Уеду вечером 26 сентября после банкета</option>
           </select>
         </div>
-
-        <!-- Вопрос 5 -->
         <div>
           <label class="block mb-2 font-semibold text-gray-400 text-[10px] uppercase tracking-[0.2em]">Какой трансфер используете обратно?</label>
           <select name="transfer" class="rsvp-input">
@@ -154,16 +169,11 @@ h1,h2,h3,.font-serif { font-family: 'Playfair Display', serif; }
             <option>Свой транспорт</option>
           </select>
         </div>
-
-        <!-- Вопрос 6 -->
         <div>
           <label class="block mb-2 font-semibold text-gray-400 text-[10px] uppercase tracking-[0.2em]">Есть ли аллергии на продукты/напитки?</label>
           <input type="text" name="allergies" class="rsvp-input" placeholder="Напишите здесь">
         </div>
-
-        <div class="pt-4">
-          <button type="submit" class="btn-gold w-full text-xs uppercase tracking-widest">Отправить ответ</button>
-        </div>
+        <div class="pt-4"><button type="submit" class="btn-gold w-full text-xs uppercase tracking-widest">Отправить ответ</button></div>
       </form>
 
       <div id="successMessage" class="hidden text-center p-12 glass-card border-[#d4af37]/20">
