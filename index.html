@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Свадьба Алексея и Анастасии | 20.09.2026</title>
+<title>Свадьба Алексея и Анастасии | 26.09.2026</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,7 +32,7 @@ h1,h2,h3,.font-serif {
     background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('photo.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    /* убрали background-attachment: fixed */
 }
 .fade-up-in {
     opacity: 0;
@@ -71,11 +71,11 @@ h1,h2,h3,.font-serif {
 <body>
 
 <!-- Hero Section -->
-<section class="relative h-screen flex items-center justify-center hero-bg text-white">
+<section class="relative min-h-screen flex items-center justify-center hero-bg text-white">
   <div class="text-center z-10 px-6 md:px-12 lg:px-24 container-custom">
     <p class="text-sm md:text-lg mb-4 tracking-[0.5em] uppercase font-light fade-up-in">Мы женимся</p>
     <h1 class="mb-6 font-serif italic font-light fade-up-in delay-1" style="font-size:clamp(2rem,8vw,6rem); line-height:1.1;">Алексей <span class="block md:inline">&</span> Анастасия</h1>
-    <p class="text-lg md:text-2xl font-light tracking-[0.3em] fade-up-in delay-2">20 Сентября 2026</p>
+    <p class="text-lg md:text-2xl font-light tracking-[0.3em] fade-up-in delay-2">26 Сентября 2026</p>
     <div class="mt-12 fade-up-in delay-3">
       <a href="#rsvp" class="btn-gold uppercase text-xs md:text-sm">Подтвердить участие</a>
     </div>
@@ -90,7 +90,7 @@ h1,h2,h3,.font-serif {
 <!-- Остальной контент (Story, Countdown, Timeline, RSVP, Footer) остаётся без изменений -->
 
 <script>
-const weddingDate = new Date("September 20, 2026 16:00:00").getTime();
+const weddingDate = new Date("September 26, 2026 16:00:00").getTime();
 function updateCountdown() {
   const now = new Date().getTime();
   const diff = weddingDate - now;
