@@ -46,8 +46,6 @@ h1,h2,h3,.font-serif { font-family: 'Playfair Display', serif; }
 .color-dot { width:40px; height:40px; border-radius:50%; display:inline-block; border:2px solid white; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
 .btn-gold { background:#1a1a1a; color:white; padding:16px 40px; border-radius:100px; font-weight:500; letter-spacing:1px; transition:all 0.3s; display:inline-block; }
 .btn-gold:hover { background: var(--accent); transform:translateY(-3px); box-shadow:0 10px 20px rgba(212,175,55,0.2); }
-.rsvp-input { background:transparent; border:none; border-bottom:1px solid #ccc; padding:12px 0; width:100%; transition:border-color 0.4s; border-radius:0; }
-.rsvp-input:focus { outline:none; border-bottom-color: var(--accent); }
 </style>
 </head>
 <body>
@@ -59,7 +57,7 @@ h1,h2,h3,.font-serif { font-family: 'Playfair Display', serif; }
     <h1 class="mb-6 font-serif italic font-light fade-up-in delay-1" style="font-size:clamp(2rem,8vw,6rem); line-height:1.1;">Алексей <span class="block md:inline">&</span> Анастасия</h1>
     <p class="text-lg md:text-2xl font-light tracking-[0.3em] fade-up-in delay-2">26 Сентября 2026</p>
     <div class="mt-12 fade-up-in delay-3">
-      <a href="#rsvp" class="btn-gold uppercase text-xs md:text-sm">Подтвердить участие</a>
+      <a href="#google-rsvp" class="btn-gold uppercase text-xs md:text-sm">Подтвердить участие</a>
     </div>
   </div>
   <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-40">
@@ -69,42 +67,66 @@ h1,h2,h3,.font-serif { font-family: 'Playfair Display', serif; }
   </div>
 </section>
 
-<!-- Interactive Rings & Story -->
+<!-- Interactive Rings & Story Section -->
 <section class="py-24 bg-[#fdfcfb]">
-<div class="container-custom">
-<div class="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-<div class="rings-container animate-on-scroll">
-<img src="https://avatars.mds.yandex.net/i?id=95dabe62d0cda9b28d51e7929850a8bd_l-5347442-images-thumbs&n=13" alt="Кольца" class="rings-img">
-<div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-700 bg-black/20">
-<span class="text-white font-serif italic text-2xl tracking-[0.3em]">Навсегда</span>
-</div>
-</div>
-<div class="animate-on-scroll" style="transition-delay: 200ms;">
-<h2 class="text-4xl md:text-6xl font-serif italic mb-6">Навстречу счастью</h2>
-<p class="text-gray-500 leading-relaxed text-lg mb-8 font-light">
-Мы познакомились в ирландском баре Lions. Тот вечер неожиданно стал началом нашей истории — мы гуляли по ночной Москве, разговаривали и понимали, что встретили очень близкого человека. Через месяц мы вместе пошли на концерт группы «Звери», и это было одно из самых ярких свиданий. Совсем скоро мы поняли, что хотим идти по жизни вместе. А позже в нашей семье появился самый главный человек — наш малыш. Теперь мы будем очень счастливы разделить с вами день нашей свадьбы.
-</p>
-<div class="h-[1px] w-20 bg-[#d4af37] mb-8"></div>
-<p class="italic text-gray-400">С любовью, Алексей и Анастасия</p>
-</div>
-</div>
-</div>
+  <div class="container-custom">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+      <div class="rings-container animate-on-scroll">
+        <img src="https://avatars.mds.yandex.net/i?id=95dabe62d0cda9b28d51e7929850a8bd_l-5347442-images-thumbs&n=13" alt="Кольца" class="rings-img">
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-700 bg-black/20">
+          <span class="text-white font-serif italic text-2xl tracking-[0.3em]">Навсегда</span>
+        </div>
+      </div>
+      <div class="animate-on-scroll" style="transition-delay: 200ms;">
+        <h2 class="text-4xl md:text-6xl font-serif italic mb-6">Навстречу счастью</h2>
+        <p class="text-gray-500 leading-relaxed text-lg mb-8 font-light">
+          Мы познакомились в ирландском баре Lions. Тот вечер неожиданно стал началом нашей истории — мы гуляли по ночной Москве, разговаривали и понимали, что встретили очень близкого человека. Через месяц мы вместе пошли на концерт группы «Звери», и это было одно из самых ярких свиданий. Совсем скоро мы поняли, что хотим идти по жизни вместе. А позже в нашей семье появился самый главный человек — наш малыш. Теперь мы будем очень счастливы разделить с вами день нашей свадьбы.
+        </p>
+        <div class="h-[1px] w-20 bg-[#d4af37] mb-8"></div>
+        <p class="italic text-gray-400">С любовью, Алексей и Анастасия</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- Countdown Section -->
 <section class="py-20 bg-stone-50 overflow-hidden">
-<div class="container-custom text-center animate-on-scroll">
-<h3 class="text-[10px] md:text-xs uppercase tracking-[0.5em] text-gray-400 mb-10">До торжества осталось</h3>
-<div class="flex flex-wrap justify-center gap-6 md:gap-16" id="countdown">
-<div class="flex flex-col min-w-[70px]"><span id="days" class="countdown-number">00</span><span class="countdown-label">дней</span></div>
-<div class="flex flex-col min-w-[70px] text-[#d4af37]"><span id="hours" class="countdown-number">00</span><span class="countdown-label">часов</span></div>
-<div class="flex flex-col min-w-[70px]"><span id="minutes" class="countdown-number">00</span><span class="countdown-label">минут</span></div>
-<div class="flex flex-col min-w-[70px]"><span id="seconds" class="countdown-number">00</span><span class="countdown-label">секунд</span></div>
-</div>
-</div>
+  <div class="container-custom text-center animate-on-scroll">
+    <h3 class="text-[10px] md:text-xs uppercase tracking-[0.5em] text-gray-400 mb-10">До торжества осталось</h3>
+    <div class="flex flex-wrap justify-center gap-6 md:gap-16" id="countdown">
+      <div class="flex flex-col min-w-[70px]"><span id="days" class="countdown-number">00</span><span class="countdown-label">дней</span></div>
+      <div class="flex flex-col min-w-[70px] text-[#d4af37]"><span id="hours" class="countdown-number">00</span><span class="countdown-label">часов</span></div>
+      <div class="flex flex-col min-w-[70px]"><span id="minutes" class="countdown-number">00</span><span class="countdown-label">минут</span></div>
+      <div class="flex flex-col min-w-[70px]"><span id="seconds" class="countdown-number">00</span><span class="countdown-label">секунд</span></div>
+    </div>
+  </div>
 </section>
 
-<!-- Timeline, Dress Code, RSVP, Footer остаются как у тебя -->
+<!-- Google Form RSVP Section -->
+<section id="google-rsvp" class="py-24 bg-[#f8f7f5]">
+  <div class="container-custom max-w-3xl mx-auto animate-on-scroll">
+    <h2 class="text-4xl font-serif italic text-center mb-8">Подтверждение участия и опрос</h2>
+    <p class="text-center text-gray-500 mb-12 font-light">
+      Пожалуйста, заполните форму, чтобы мы могли учесть ваши ответы.
+    </p>
+    <div class="w-full h-[1200px]">
+      <iframe 
+        src="https://docs.google.com/forms/d/e/1FAIpQLSc1ssTjMlYZlf6tj1X--VOLq9U29IVgYT60oqnxzDOi3pwu0w/viewform?embedded=true" 
+        width="100%" 
+        height="100%" 
+        frameborder="0" 
+        marginheight="0" 
+        marginwidth="0">
+        Загружается…
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<footer class="py-16 text-center border-t border-gray-100 bg-white">
+  <p class="font-serif italic text-2xl text-stone-800 mb-2">Алексей & Анастасия</p>
+  <p class="text-[9px] tracking-[0.5em] text-gray-400 uppercase">26 • 09 • 2026</p>
+</footer>
 
 <script>
 const weddingDate = new Date("September 26, 2026 16:00:00").getTime();
@@ -112,7 +134,6 @@ function updateCountdown(){const now=new Date().getTime();const diff=weddingDate
 setInterval(updateCountdown,1000); updateCountdown();
 const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');}});},{threshold:0.1});
 document.querySelectorAll('.animate-on-scroll').forEach(el=>observer.observe(el));
-document.getElementById('weddingForm')?.addEventListener('submit',function(e){e.preventDefault();this.style.transition='opacity 0.5s';this.style.opacity='0';setTimeout(()=>{this.classList.add('hidden');document.getElementById('successMessage').classList.remove('hidden');document.getElementById('successMessage').classList.add('fade-up-in');},500);});
 window.addEventListener('scroll',()=>{const scrolled=window.pageYOffset;const hero=document.querySelector('.hero-bg');if(window.innerWidth>768){hero.style.backgroundPositionY=-(scrolled*0.3)+'px';}});
 </script>
 </body>
