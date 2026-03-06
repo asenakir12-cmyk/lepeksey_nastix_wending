@@ -5,8 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Свадьба Алексея и Анастасии | 26.09.2026</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -15,44 +13,62 @@
     --accent: #d4af37;
     --dark: #1a1a1a;
 }
-body { font-family: 'Montserrat', sans-serif; margin:0; padding:0; overflow-x:hidden; background:#fdfcfb; color:#2d3436; }
-h1,h2,h3,.font-serif { font-family: 'Playfair Display', serif; }
 
-/* Hero */
-.hero-bg { background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('photo.jpg'); background-size:cover; background-position:center; background-attachment:fixed; }
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #fdfcfb;
+    color: #2d3436;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
 
-/* Animations */
-.fade-up-in { opacity:0; transform:translateY(30px); animation: fadeUp 1.5s cubic-bezier(0.2,0.8,0.2,1) forwards; }
-.delay-1 { animation-delay: 0.3s; }
-.delay-2 { animation-delay: 0.6s; }
-.delay-3 { animation-delay: 0.9s; }
-@keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
+h1,h2,h3,.font-serif { font-family:'Playfair Display', serif; }
 
-/* Glass cards */
+/* Hero Section with Parallax */
+.hero-bg {
+    background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), 
+                url('photo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Intro Animation */
+.fade-up-in { opacity:0; transform:translateY(30px); animation:fadeUp 1.5s cubic-bezier(0.2,0.8,0.2,1) forwards; }
+.delay-1{animation-delay:0.3s;} .delay-2{animation-delay:0.6s;} .delay-3{animation-delay:0.9s;}
+@keyframes fadeUp { to{opacity:1;transform:translateY(0);} }
+
+/* Glassmorphism Cards */
 .glass-card { background: rgba(255,255,255,0.7); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border:1px solid var(--glass-border); border-radius:32px; box-shadow:0 10px 40px rgba(0,0,0,0.03); }
 
-/* Countdown */
-.countdown-number { font-size:clamp(2rem,8vw,3.5rem); font-weight:200; line-height:1; color:var(--dark); }
+/* Interactive Rings */
+.rings-container { position:relative; height:450px; overflow:hidden; border-radius:40px; cursor:pointer; }
+.rings-img { width:100%; height:100%; object-fit:cover; filter:grayscale(100%) contrast(1.1); transition:all 1.2s cubic-bezier(0.4,0,0.2,1); transform:scale(1.05); }
+.rings-container:hover .rings-img { filter:grayscale(0%) contrast(1); transform:scale(1); }
+
+/* Countdown Style */
+.countdown-number { font-size:clamp(2rem,8vw,3.5rem); font-weight:200; line-height:1; color:var(--dark);}
 .countdown-label { font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:#888; margin-top:0.5rem; }
 
+/* Global Padding */
 .container-custom { max-width:1200px; margin:0 auto; padding-left:1.5rem; padding-right:1.5rem; }
-.animate-on-scroll { opacity:0; transform:translateY(40px); transition: all 1s ease-out; }
-.animate-on-scroll.visible { opacity:1; transform:translateY(0); }
-.color-dot { width:40px; height:40px; border-radius:50%; display:inline-block; border:2px solid white; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
-.btn-gold { background:#1a1a1a; color:white; padding:16px 40px; border-radius:100px; font-weight:500; letter-spacing:1px; transition: all 0.3s; display:inline-block; }
-.btn-gold:hover { background:var(--accent); transform:translateY(-3px); box-shadow:0 10px 20px rgba(212,175,55,0.2); }
-.rsvp-input { background:transparent; border:none; border-bottom:1px solid #ccc; padding:12px 0; width:100%; transition:border-color 0.4s; border-radius:0; }
-.rsvp-input:focus { outline:none; border-bottom-color:var(--accent); }
 
-/* Rings Animation */
-.rings-container { position: relative; height: 450px; overflow: hidden; border-radius: 40px; cursor: pointer; }
-.rings-img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(1.1); transition: all 1.2s cubic-bezier(0.4,0,0.2,1); transform: scale(1.05); }
-.rings-container:hover .rings-img { filter: grayscale(0%) contrast(1); transform: scale(1); }
+/* Scroll Animations */
+.animate-on-scroll { opacity:0; transform:translateY(40px); transition:all 1s ease-out; }
+.animate-on-scroll.visible { opacity:1; transform:translateY(0); }
+
+.color-dot { width:40px; height:40px; border-radius:50%; display:inline-block; border:2px solid white; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
+.btn-gold { background:#1a1a1a; color:white; padding:16px 40px; border-radius:100px; font-weight:500; letter-spacing:1px; transition:all 0.3s; display:inline-block;}
+.btn-gold:hover { background:var(--accent); transform:translateY(-3px); box-shadow:0 10px 20px rgba(212,175,55,0.2); }
+
+.rsvp-input { background:transparent; border:none; border-bottom:1px solid #ccc; padding:12px 0; width:100%; transition:border-color 0.4s; border-radius:0;}
+.rsvp-input:focus { outline:none; border-bottom-color:var(--accent);}
 </style>
 </head>
 <body>
 
-<!-- Hero -->
+<!-- Hero Section -->
 <section class="relative h-screen flex items-center justify-center hero-bg text-white">
   <div class="text-center z-10 px-6 container-custom">
     <p class="text-sm md:text-lg mb-4 tracking-[0.5em] uppercase font-light fade-up-in">Мы женимся</p>
@@ -64,24 +80,22 @@ h1,h2,h3,.font-serif { font-family: 'Playfair Display', serif; }
       <a href="#rsvp" class="btn-gold uppercase text-xs md:text-sm">Подтвердить участие</a>
     </div>
   </div>
+  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-40">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+  </div>
 </section>
 
-<!-- Story с Interactive Ring -->
+<!-- Interactive Rings & Story -->
 <section class="py-24 bg-[#fdfcfb]">
   <div class="container-custom">
     <div class="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-
-      <!-- Картинка с кольцом -->
       <div class="rings-container animate-on-scroll">
-        <img src="https://avatars.mds.yandex.net/i?id=95dabe62d0cda9b28d51e7929850a8bd_l-5347442-images-thumbs&n=13"
-             alt="Кольца" class="rings-img">
+        <img src="https://avatars.mds.yandex.net/i?id=95dabe62d0cda9b28d51e7929850a8bd_l-5347442-images-thumbs&n=13" alt="Кольца" class="rings-img">
         <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-700 bg-black/20">
           <span class="text-white font-serif italic text-2xl tracking-[0.3em]">Навсегда</span>
         </div>
       </div>
-
-      <!-- Текст истории -->
-      <div class="animate-on-scroll" style="transition-delay: 200ms;">
+      <div class="animate-on-scroll" style="transition-delay:200ms;">
         <h2 class="text-4xl md:text-6xl font-serif italic mb-6">Навстречу счастью</h2>
         <p class="text-gray-500 leading-relaxed text-lg mb-8 font-light">
           Мы познакомились в ирландском баре Lions. Тот вечер неожиданно стал началом нашей истории — мы гуляли по ночной Москве, разговаривали и понимали, что встретили очень близкого человека. Через месяц мы вместе пошли на концерт группы «Звери», и это было одно из самых ярких свиданий. Совсем скоро мы поняли, что хотим идти по жизни вместе. А позже в нашей семье появился самый главный человек — наш малыш. Теперь мы будем очень счастливы разделить с вами день нашей свадьбы.
@@ -89,12 +103,11 @@ h1,h2,h3,.font-serif { font-family: 'Playfair Display', serif; }
         <div class="h-[1px] w-20 bg-[#d4af37] mb-8"></div>
         <p class="italic text-gray-400">С любовью, Алексей и Анастасия</p>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- Countdown -->
+<!-- Countdown Section -->
 <section class="py-20 bg-stone-50 overflow-hidden">
   <div class="container-custom text-center animate-on-scroll">
     <h3 class="text-[10px] md:text-xs uppercase tracking-[0.5em] text-gray-400 mb-10">До торжества осталось</h3>
@@ -119,25 +132,27 @@ h1,h2,h3,.font-serif { font-family: 'Playfair Display', serif; }
   </div>
 </section>
 
-<!-- RSVP форма -->
-<section id="rsvp" class="py-24 bg-[#f8f7f5]">
+<!-- RSVP Section (Custom Form) -->
+<section id="rsvp" class="py-24">
   <div class="container-custom">
     <div class="max-w-xl mx-auto animate-on-scroll">
       <h2 class="text-4xl font-serif italic text-center mb-4">Подтверждение</h2>
       <p class="text-center text-gray-400 mb-12 font-light">Просим вас дать ответ до 1 сентября 2026 года</p>
 
       <form id="weddingForm" class="space-y-12">
-        <div><input type="text" name="name" required class="rsvp-input" placeholder="Ваше имя и фамилия"></div>
+        <div class="group">
+          <input type="text" name="name" required class="rsvp-input" placeholder="Ваше имя и фамилия">
+        </div>
         <div>
-          <label class="block mb-2 font-semibold text-gray-400 text-[10px] uppercase tracking-[0.2em]">Сможете ли Вы посетить наше мероприятие?</label>
+          <label class="block mb-2 text-[10px] uppercase tracking-[0.2em] text-gray-400 font-semibold">Сможете ли Вы посетить мероприятие?</label>
           <select name="attending" class="rsvp-input">
-            <option value="Да">Да</option>
-            <option value="К сожалению, нет(">К сожалению, нет(</option>
-            <option value="Пока не могу сказать">Пока не могу сказать</option>
+            <option>Да</option>
+            <option>К сожалению, нет(</option>
+            <option>Пока не могу сказать</option>
           </select>
         </div>
         <div>
-          <label class="block mb-2 font-semibold text-gray-400 text-[10px] uppercase tracking-[0.2em]">Предпочтительный алкогольный напиток</label>
+          <label class="block mb-2 text-[10px] uppercase tracking-[0.2em] text-gray-400 font-semibold">Предпочтительный алкогольный напиток</label>
           <select name="drink" class="rsvp-input">
             <option>Вино белое полусладкое</option>
             <option>Вино белое полусухое</option>
@@ -155,14 +170,14 @@ h1,h2,h3,.font-serif { font-family: 'Playfair Display', serif; }
           </select>
         </div>
         <div>
-          <label class="block mb-2 font-semibold text-gray-400 text-[10px] uppercase tracking-[0.2em]">Сможете ли Вы остаться на второй день?</label>
+          <label class="block mb-2 text-[10px] uppercase tracking-[0.2em] text-gray-400 font-semibold">Сможете ли Вы остаться на второй день?</label>
           <select name="second_day" class="rsvp-input">
             <option>Смогу остаться на 27 сентября</option>
             <option>Уеду вечером 26 сентября после банкета</option>
           </select>
         </div>
         <div>
-          <label class="block mb-2 font-semibold text-gray-400 text-[10px] uppercase tracking-[0.2em]">Какой трансфер используете обратно?</label>
+          <label class="block mb-2 text-[10px] uppercase tracking-[0.2em] text-gray-400 font-semibold">Какой трансфер используете обратно?</label>
           <select name="transfer" class="rsvp-input">
             <option>Общий трансфер 27 сентября в 20.00 (воскресенье)</option>
             <option>Общий трансфер 28 сентября в 13.00 (понедельник)</option>
@@ -170,17 +185,16 @@ h1,h2,h3,.font-serif { font-family: 'Playfair Display', serif; }
           </select>
         </div>
         <div>
-          <label class="block mb-2 font-semibold text-gray-400 text-[10px] uppercase tracking-[0.2em]">Есть ли аллергии на продукты/напитки?</label>
-          <input type="text" name="allergies" class="rsvp-input" placeholder="Напишите здесь">
+          <label class="block mb-2 text-[10px] uppercase tracking-[0.2em] text-gray-400 font-semibold">Есть ли аллергии на какие-либо продукты/напитки?</label>
+          <input type="text" name="allergies" class="rsvp-input" placeholder="Если есть, напишите здесь">
         </div>
-        <div class="pt-4"><button type="submit" class="btn-gold w-full text-xs uppercase tracking-widest">Отправить ответ</button></div>
+        <button type="submit" class="btn-gold w-full text-xs uppercase tracking-widest">Отправить ответ</button>
       </form>
 
       <div id="successMessage" class="hidden text-center p-12 glass-card border-[#d4af37]/20">
         <p class="font-serif italic text-3xl mb-3">До встречи!</p>
         <p class="text-gray-500 font-light">Ваш ответ успешно получен и сохранен.</p>
       </div>
-
     </div>
   </div>
 </section>
@@ -196,37 +210,51 @@ const weddingDate = new Date("September 26, 2026 16:00:00").getTime();
 function updateCountdown() {
   const now = new Date().getTime();
   const diff = weddingDate - now;
-  if(diff < 0) {
-    document.getElementById("countdown").innerHTML = "<p class='text-xl italic font-serif'>Этот день настал!</p>";
-    return;
-  }
+  if(diff<0){ document.getElementById("countdown").innerHTML="<p class='text-xl italic font-serif'>Этот день настал!</p>"; return; }
   const d = Math.floor(diff/(1000*60*60*24));
   const h = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
   const m = Math.floor((diff%(1000*60*60))/(1000*60));
   const s = Math.floor((diff%(1000*60))/1000);
-  document.getElementById("days").innerText = d<10?'0'+d:d;
-  document.getElementById("hours").innerText = h<10?'0'+h:h;
-  document.getElementById("minutes").innerText = m<10?'0'+m:m;
-  document.getElementById("seconds").innerText = s<10?'0'+s:s;
+  document.getElementById("days").innerText=d<10?'0'+d:d;
+  document.getElementById("hours").innerText=h<10?'0'+h:h;
+  document.getElementById("minutes").innerText=m<10?'0'+m:m;
+  document.getElementById("seconds").innerText=s<10?'0'+s:s;
 }
 setInterval(updateCountdown,1000); updateCountdown();
 
-// Animate on scroll
-const observer = new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');}});},{threshold:0.1});
+// Scroll animations
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{ if(entry.isIntersecting) entry.target.classList.add('visible'); });
+},{ threshold:0.1 });
 document.querySelectorAll('.animate-on-scroll').forEach(el=>observer.observe(el));
 
 // Form submission
-const scriptURL = 'https://script.google.com/macros/s/AKfycbzYb2FauBJjv8q4wTijBeDHscbTvkhIuJG3Q0UUtrHnWE2iuVbjxONb-f9jPc3QAcM/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycby227xSAD1recO18wJU7XqXN0CdLw2ws6xQSlkpcD5Pyg0dVegBp6dzeFQJmvUN37C2/exec';
 const form = document.getElementById('weddingForm');
 form.addEventListener('submit', e=>{
   e.preventDefault();
-  fetch(scriptURL,{method:'POST',body:new FormData(form)})
+  fetch(scriptURL, { method:'POST', body:new FormData(form) })
+    .then(response=>response.json())
     .then(response=>{
-      form.classList.add('hidden');
-      document.getElementById('successMessage').classList.remove('hidden');
-      document.getElementById('successMessage').classList.add('fade-up-in');
+      if(response.success){
+        form.style.opacity='0';
+        setTimeout(()=>{
+          form.classList.add('hidden');
+          document.getElementById('successMessage').classList.remove('hidden');
+          document.getElementById('successMessage').classList.add('fade-up-in');
+        },500);
+      } else {
+        alert('Ошибка отправки: '+(response.error||'Попробуйте позже'));
+      }
     })
     .catch(error=>alert('Ошибка отправки: '+error));
+});
+
+// Hero parallax
+window.addEventListener('scroll', ()=>{
+  const scrolled = window.pageYOffset;
+  const hero = document.querySelector('.hero-bg');
+  if(window.innerWidth>768){ hero.style.backgroundPositionY = -(scrolled*0.3)+'px'; }
 });
 </script>
 
